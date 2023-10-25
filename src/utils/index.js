@@ -108,7 +108,6 @@ export const currentDateArray = () => {
     };
     daysObject.push(days);
   }
-  console.log(daysObject);
   return daysObject;
 };
 
