@@ -83,7 +83,7 @@ export const Home = ({ data }) => {
           <GuideMarker displayHour={displayHour} />
           <DisplayHours witdhBlock={witdhBlock} />
 
-          {data?.map((channel, index) => (
+          {data.map((channel, index) => (
             <ChannelGuide
               key={`${channel}+${index}`}
               data={data}

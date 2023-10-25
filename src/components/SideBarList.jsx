@@ -12,7 +12,7 @@ export const SideBarList = ({ data }) => {
         />
       </div>
       <div className="mt-10">
-        {data?.map((channel, index) => (
+        {data.map((channel, index) => (
           <div key={`${index}+${channel}`} className={styles.channelContainer}>
             <img
               src={channel.images.logo}

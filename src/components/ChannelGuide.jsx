@@ -16,7 +16,7 @@ export const ChannelGuide = ({
       style={{ minWidth: `${widthBLock * numberOfBlocks}rem` }}
       //NUMBER OF BLOCKS 24
     >
-      {parseSchedules({ channel: channel, data: data, time: time })?.map(
+      {parseSchedules({ channel: channel, data: data, time: time }).map(
         (program, index) => (
           <div
             key={index}
