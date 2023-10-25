@@ -5,7 +5,7 @@ const baseURL = import.meta.env.VITE_BASE_URL;
 
 export const useFetch = (endpoint) => {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const options = {
@@ -14,7 +14,6 @@ export const useFetch = (endpoint) => {
   };
 
   const fetchData = async () => {
-    setIsLoading(true);
     try {
       const response = await axios.request(options);
       setData(response.data.channels);
