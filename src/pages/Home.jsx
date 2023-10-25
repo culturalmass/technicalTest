@@ -84,7 +84,7 @@ export const Home = ({ data, isLoading }) => {
           <DisplayHours witdhBlock={witdhBlock} />
 
           {!isLoading &&
-            data.map((channel, index) => (
+            data?.map((channel, index) => (
               <ChannelGuide
                 key={`${channel}+${index}`}
                 data={data}

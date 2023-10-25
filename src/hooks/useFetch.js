@@ -17,7 +17,6 @@ export const useFetch = (endpoint) => {
     try {
       const response = await axios.request(options);
       setData(response.data.channels);
-      setIsLoading(false);
     } catch (error) {
       setError(error);
     } finally {
