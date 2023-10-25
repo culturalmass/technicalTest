@@ -12,7 +12,7 @@ export const App = () => {
       ) : error !== null ? (
         alert(error)
       ) : (
-        <Home data={data} />
+        <Home data={data} isLoading={isLoading} />
       )}
     </>
   );

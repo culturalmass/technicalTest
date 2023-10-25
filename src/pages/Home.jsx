@@ -13,7 +13,7 @@ import {
   DisplayHours,
 } from "../components";
 
-export const Home = ({ data }) => {
+export const Home = ({ data, isLoading }) => {
   const witdhBlock = 21.875;
   const [displayHour, setDisplayHour] = useState({
     currentHour: new Date().toLocaleString("en-US", {
@@ -77,22 +77,23 @@ export const Home = ({ data }) => {
       />
       <NavBar />
       <div className={styles.bodyContainer}>
-        <SideBarList data={data} />
+        {!isLoading && <SideBarList data={data} />}
         <DatePicker displayHour={displayHour} />
         <div className={styles.contentWrapper}>
           <GuideMarker displayHour={displayHour} />
           <DisplayHours witdhBlock={witdhBlock} />
 
-          {data.map((channel, index) => (
-            <ChannelGuide
-              key={`${channel}+${index}`}
-              data={data}
-              channel={index}
-              time={displayHour.currentHour}
-              widthBLock={witdhBlock}
-              handleClick={handleClick}
-            />
-          ))}
+          {!isLoading &&
+            data.map((channel, index) => (
+              <ChannelGuide
+                key={`${channel}+${index}`}
+                data={data}
+                channel={index}
+                time={displayHour.currentHour}
+                widthBLock={witdhBlock}
+                handleClick={handleClick}
+              />
+            ))}
           <ScrollBtn navigate={navigateCurrent} />
         </div>
       </div>
