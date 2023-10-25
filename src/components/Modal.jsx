@@ -42,7 +42,7 @@ export const Modal = ({ active, channel, program, closeModal, data }) => {
             />
           </div>
           <img
-            className="object-contain h-[36.5rem]"
+            className="object-contain h-[36.5rem] ml-2 sm:ml-0"
             src={program.poster}
             alt={program.title}
           />

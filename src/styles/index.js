@@ -14,9 +14,9 @@ export const styles = {
 
   //components-MODAL
   modalWrapper:
-    "absolute h-[52.6rem] sm:flex sm:flex-row w-[24.4rem] sm:h-4/6 sm:w-4/6 sm:top-[15%] sm:left-[15%] bg-[#393939] items-center align-middle justify-center text-white z-50 overflow-hidden sm:rounded-lg sm:border-[0.05rem]",
+    "absolute h-screen sm:flex sm:flex-row w-screen sm:h-4/6 sm:w-4/6 sm:top-[15%] sm:left-[12rem] bg-[#393939] items-center align-middle justify-center text-white z-50 overflow-hidden sm:rounded-lg sm:border-[0.05rem]",
   modalNavBar:
-    "fixed flex flex-row justify-between items-center top-[1%] sm:top-[17%] w-[24rem] sm:w-[59.5rem]",
+    "fixed flex flex-row justify-between items-center top-[1%] sm:top-[17%] w-[24rem] sm:w-[55.5rem]",
   channelLogoContainer:
     "flex max-w-[7rem] sm:min-w-[8rem] sm:mr-[2rem] sm:-mt-6 justify-center align-middle max-h-16",
 
