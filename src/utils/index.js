@@ -74,15 +74,18 @@ export const hours = [
 ];
 
 export const currentDateArray = () => {
+  const oneDayInMilisecond = 86400000;
   let daysObject = [];
   for (let i = 5; i >= 0; i--) {
     let days = {
-      date: (Number(currentDate[1]) - i).toString(),
-      month: currentDate[0],
+      date: new Date(new Date().getTime() + oneDayInMilisecond * -i)
+        .toLocaleString("en-US", { hour12: false })
+        .split("/")[1],
+      month: new Date(new Date().getTime() + oneDayInMilisecond * -i)
+        .toLocaleString("en-US", { hour12: false })
+        .split("/")[0],
       day: new Date(
-        `${currentDate[2].split(",")[0]}-${currentDate[0]}-${Number(
-          currentDate[1] - i
-        ).toString()}`
+        new Date().getTime() + oneDayInMilisecond * -i
       ).toLocaleString("en-US", {
         weekday: "long",
       }),
@@ -91,18 +94,21 @@ export const currentDateArray = () => {
   }
   for (let i = 1; i <= 5; i++) {
     let days = {
-      date: (Number(currentDate[1]) + i).toString(),
-      month: currentDate[0],
+      date: new Date(new Date().getTime() + oneDayInMilisecond * i)
+        .toLocaleString("en-US", { hour12: false })
+        .split("/")[1],
+      month: new Date(new Date().getTime() + oneDayInMilisecond * i)
+        .toLocaleString("en-US", { hour12: false })
+        .split("/")[0],
       day: new Date(
-        `${currentDate[2].split(",")[0]}-${currentDate[0]}-${(
-          Number(currentDate[1]) + i
-        ).toString()}`
+        new Date().getTime() + oneDayInMilisecond * i
       ).toLocaleString("en-US", {
         weekday: "long",
       }),
     };
     daysObject.push(days);
   }
+  console.log(daysObject);
   return daysObject;
 };
 
